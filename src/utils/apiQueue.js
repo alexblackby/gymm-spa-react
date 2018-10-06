@@ -10,90 +10,90 @@ apiQueue.authHeader = null
 
 
 apiQueue.start = () => {
-  apiQueue.intervalTimer = setInterval(apiQueue.process, apiQueue.interval)
+    apiQueue.intervalTimer = setInterval(apiQueue.process, apiQueue.interval)
 }
 
 apiQueue.setAuthHeader = (header) => {
-  apiQueue.authHeader = header
+    apiQueue.authHeader = header
 }
 
 
 apiQueue.add = (url, method, data = null) => {
-  return new Promise(function (resolve, reject) {
-    const queueItem = {
-      url,
-      method,
-      data,
-      resolve,
-      reject
-    }
-    apiQueue.queue.push(queueItem)
-  })
+    return new Promise(function (resolve, reject) {
+        const queueItem = {
+            url,
+            method,
+            data,
+            resolve,
+            reject
+        }
+        apiQueue.queue.push(queueItem)
+    })
 }
 
 
 apiQueue.process = () => {
-  if (apiQueue.isProcessing) {
-    return
-  }
+    if (apiQueue.isProcessing) {
+        return
+    }
 
-  let queueItem = apiQueue.shift()
-  if (queueItem) {
-    apiQueue.isProcessing = true
-  } else {
-    return
-  }
+    let queueItem = apiQueue.shift()
+    if (queueItem) {
+        apiQueue.isProcessing = true
+    } else {
+        return
+    }
 
-  let headers = {}
-  if(apiQueue.authHeader) {
-    headers.Authorization = apiQueue.authHeader
-  }
+    let headers = {}
+    if (apiQueue.authHeader) {
+        headers.Authorization = apiQueue.authHeader
+    }
 
-  axios({
-    method: queueItem.method,
-    url: queueItem.url,
-    data: queueItem.data,
-    headers
-  })
-    .then(response => {
-      apiQueue.isProcessing = false
-      queueItem.resolve(response.data)
+    axios({
+        method: queueItem.method,
+        url: queueItem.url,
+        data: queueItem.data,
+        headers
     })
-    .catch(error => {
-      apiQueue.isProcessing = false
-      queueItem.reject(error)
-    })
+        .then(response => {
+            apiQueue.isProcessing = false
+            queueItem.resolve(response.data)
+        })
+        .catch(error => {
+            apiQueue.isProcessing = false
+            queueItem.reject(error)
+        })
 }
 
 
 apiQueue.shift = () => {
-  if (apiQueue.queue.length === 0) return false
-  let queueItem = apiQueue.queue.shift()
+    if (apiQueue.queue.length === 0) return false
+    let queueItem = apiQueue.queue.shift()
 
-  // try to find similar idempotent requests in the queue (PUT/DELETE and same URL)
-  // if find - execute only the latest one
-  if (queueItem.method.toLowerCase() === 'put' || queueItem.method.toLowerCase() === 'delete') {
-    for (let i = 0; i < apiQueue.queue.length; i++) {
-      const nextItem = apiQueue.queue[i]
-      if (
-        (nextItem.method.toLowerCase() === 'put' || nextItem.method.toLowerCase() === 'delete')
-        && nextItem.url === queueItem.url
-      ) {
-        queueItem = nextItem
-        apiQueue.queue.splice(i, 1)
-        i--
-      }
+    // try to find similar idempotent requests in the queue (PUT/DELETE and same URL)
+    // if find - execute only the latest one
+    if (queueItem.method.toLowerCase() === 'put' || queueItem.method.toLowerCase() === 'delete') {
+        for (let i = 0; i < apiQueue.queue.length; i++) {
+            const nextItem = apiQueue.queue[i]
+            if (
+                (nextItem.method.toLowerCase() === 'put' || nextItem.method.toLowerCase() === 'delete')
+                && nextItem.url === queueItem.url
+            ) {
+                queueItem = nextItem
+                apiQueue.queue.splice(i, 1)
+                i--
+            }
+        }
     }
-  }
 
-  return queueItem
+    return queueItem
 }
 
 
 apiQueue.deleteProcessed = () => {
-  if (apiQueue.queue.length && apiQueue.queue[0].isProcessing) {
-    apiQueue.queue.shift()
-  }
+    if (apiQueue.queue.length && apiQueue.queue[0].isProcessing) {
+        apiQueue.queue.shift()
+    }
 }
 
 

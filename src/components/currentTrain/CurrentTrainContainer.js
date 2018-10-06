@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import CurrentTrain from "./CurrentTrain";
 import {startTrain} from "../../actions";
 
-const mapStateToProps = function(store) {
+const mapStateToProps = function (store) {
     return {
         currentTrain: store.currentTrain
     };

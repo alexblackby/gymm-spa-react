@@ -3,19 +3,19 @@ import {store} from '../store'
 let auth = {}
 
 auth.getToken = function () {
-  return store.getState().authData.token
+    return store.getState().authData.token
 }
 
 auth.getUserId = function () {
-  return store.getState().authData.userId
+    return store.getState().authData.userId
 }
 
 auth.getUserEmail = function () {
-  return store.getState().authData.userEmail
+    return store.getState().authData.userEmail
 }
 
 auth.getAuthHeader = function () {
-  return "Bearer " + auth.getToken()
+    return "Bearer " + auth.getToken()
 }
 
 export default auth

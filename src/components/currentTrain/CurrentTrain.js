@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import dateFormat from "../../utils/dateFormats";
 import utils from "../../utils/utils";
 import uuid4 from 'uuid/v4';
@@ -17,7 +17,7 @@ class CurrentTrain extends Component {
             <div>
                 <div className="current-train-header">
                     <div className="current-train-date">
-                        { dateFormat(this.props.currentTrain.createTime, 'dayMonth') }
+                        {dateFormat(this.props.currentTrain.createTime, 'dayMonth')}
                     </div>
                     <div className="current-train-stop">
                         Завершить тренировку

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import SelectTrainer from "./SelectTrainer";
 
-const mapStateToProps = function(store) {
+const mapStateToProps = function (store) {
     return {
         ownTrainers: store.trainHistory.ownTrainers,
         allTrainers: store.allTrainers

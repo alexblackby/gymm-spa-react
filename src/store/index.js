@@ -36,5 +36,5 @@ const getters = {
     historyIsLoadedFully: () => store.getState().trainHistory.historyIsLoadedFully
 }
 
-export {store,getters}
+export {store, getters}
 

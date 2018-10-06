@@ -13,7 +13,7 @@ class TrainerSets extends Component {
                     </div>
                 ))
                 }
-                <div className="clear" />
+                <div className="clear"/>
             </div>
         );
     }

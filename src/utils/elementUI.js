@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import {Button, Input, InputNumber, Slider, Popover, Dropdown, DropdownMenu, DropdownItem} from 'element-ui'
+import {Button, Dropdown, DropdownItem, DropdownMenu, Input, InputNumber, Popover, Slider} from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Input)

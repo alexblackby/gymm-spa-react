@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 import authData from "./authData";
 import trainHistory from "./trainHistory";
 import allTrainers from "./allTrainers";

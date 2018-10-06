@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Menu, Dropdown } from 'antd';
+import React, {Component} from 'react';
+import {Dropdown, Menu} from 'antd';
 import 'antd/lib/dropdown/style/css'
 import 'antd/lib/menu/style/css'
 

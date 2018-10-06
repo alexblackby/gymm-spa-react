@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import DefaultHeader from "../common/DefaultHeader";
 import TrainHistoryContainer from "../trainHistory/TrainHistoryContainer";
 import StartTrainBlock from "./StartTrainBlock";

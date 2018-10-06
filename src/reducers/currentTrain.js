@@ -50,7 +50,7 @@ const currentTrain = (state = initState, action) => {
         case 'DELETE_TRAINER_FROM_CURRENT_TRAIN':
             return {
                 ...state,
-                trainers: state.trainers.filter( item => item.id !== action.trainerId )
+                trainers: state.trainers.filter(item => item.id !== action.trainerId)
             }
         case 'ADD_CURRENT_TRAINER_SET':
             return {

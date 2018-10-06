@@ -1,7 +1,7 @@
-import { connect} from 'react-redux';
+import {connect} from 'react-redux';
 import UserMenu from './UserMenu';
 
-const mapStateToProps = function(store) {
+const mapStateToProps = function (store) {
     return {
         userEmail: store.authData.userEmail
     };
