@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Dropdown, Menu} from 'antd';
+import React, {Component} from 'react'
+import {Dropdown, Menu} from 'antd'
 import 'antd/lib/dropdown/style/css'
 import 'antd/lib/menu/style/css'
 
@@ -17,7 +17,7 @@ class UserMenu extends Component {
                     Выйти
                 </Menu.Item>
             </Menu>
-        );
+        )
         return (
             <div className="user-menu">
                 <Dropdown overlay={menu} placement="bottomLeft" trigger={['click']}>
@@ -26,8 +26,8 @@ class UserMenu extends Component {
                     </div>
                 </Dropdown>
             </div>
-        );
+        )
     }
 }
 
-export default UserMenu;
+export default UserMenu

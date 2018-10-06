@@ -1,5 +1,5 @@
-import utils from "../utils/utils";
-import dataOps from "../utils/dataOps";
+import utils from "../utils/utils"
+import dataOps from "../utils/dataOps"
 
 const emptyTrainer = {
     id: 0,

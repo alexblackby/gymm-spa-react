@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import DefaultHeader from "../common/DefaultHeader";
-import TrainHistoryContainer from "../trainHistory/TrainHistoryContainer";
-import StartTrainBlock from "./StartTrainBlock";
-import createHistory from "history/createHashHistory";
+import React, {Component} from 'react'
+import DefaultHeader from "../common/DefaultHeader"
+import TrainHistoryContainer from "../trainHistory/TrainHistoryContainer"
+import StartTrainBlock from "./StartTrainBlock"
+import createHistory from "history/createHashHistory"
 
 class HomeScreen extends Component {
 
@@ -21,8 +21,8 @@ class HomeScreen extends Component {
                 <StartTrainBlock onClickStart={this.clickStart}/>
                 <TrainHistoryContainer/>
             </div>
-        );
+        )
     }
 }
 
-export default HomeScreen;
+export default HomeScreen

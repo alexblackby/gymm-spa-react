@@ -1,4 +1,4 @@
-import dataOps from "../utils/dataOps";
+import dataOps from "../utils/dataOps"
 
 const initState = []
 

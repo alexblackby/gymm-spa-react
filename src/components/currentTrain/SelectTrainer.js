@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Input} from 'antd';
-import 'antd/lib/input/style/css';
+import React, {Component} from 'react'
+import {Input} from 'antd'
+import 'antd/lib/input/style/css'
 
 class SelectTrainer extends Component {
     render() {
@@ -17,8 +17,8 @@ class SelectTrainer extends Component {
                     </form>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default SelectTrainer;
+export default SelectTrainer

@@ -1,24 +1,24 @@
-import React, {Component} from 'react';
-import dateFormat from "../../utils/dateFormats";
-import TrainerSets from "../common/TrainerSets";
+import React, {Component} from 'react'
+import dateFormat from "../../utils/dateFormats"
+import TrainerSets from "../common/TrainerSets"
 
 class TrainHistoryItem extends Component {
     constructor(props) {
-        super(props);
-        this.state = {expanded: false};
+        super(props)
+        this.state = {expanded: false}
 
-        this.toggleExpand = this.toggleExpand.bind(this);
+        this.toggleExpand = this.toggleExpand.bind(this)
     }
 
     toggleExpand() {
         this.setState(state => ({
             ...state,
             expanded: !state.expanded
-        }));
+        }))
     }
 
     render() {
-        const item = this.props.item;
+        const item = this.props.item
         return (
             <div className="form history-item" onClick={this.toggleExpand}>
                 <h2 className="form-header">
@@ -39,8 +39,8 @@ class TrainHistoryItem extends Component {
                     )
                 )}
             </div>
-        );
+        )
     }
 }
 
-export default TrainHistoryItem;
+export default TrainHistoryItem

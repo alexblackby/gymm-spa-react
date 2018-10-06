@@ -1,8 +1,8 @@
-import React from 'react';
-import utils from "../../utils/utils";
-import dateFormat from "../../utils/dateFormats";
-import {Button} from 'antd';
-import 'antd/lib/button/style/css';
+import React from 'react'
+import utils from "../../utils/utils"
+import dateFormat from "../../utils/dateFormats"
+import {Button} from 'antd'
+import 'antd/lib/button/style/css'
 
 const StartTrainBlock = (props) => {
     const dateNow = dateFormat(utils.timeInSeconds(), 'weekdayFullMonth')

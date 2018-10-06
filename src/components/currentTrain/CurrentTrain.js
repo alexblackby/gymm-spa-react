@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import dateFormat from "../../utils/dateFormats";
-import utils from "../../utils/utils";
-import uuid4 from 'uuid/v4';
-import SelectTrainer from "./SelectTrainer";
+import React, {Component} from 'react'
+import dateFormat from "../../utils/dateFormats"
+import utils from "../../utils/utils"
+import uuid4 from 'uuid/v4'
+import SelectTrainer from "./SelectTrainer"
 
 class CurrentTrain extends Component {
 
@@ -23,11 +23,11 @@ class CurrentTrain extends Component {
                         Завершить тренировку
                     </div>
                 </div>
-                <div className="clear"></div>
+                <div className="clear"/>
                 <SelectTrainer/>
             </div>
-        );
+        )
     }
 }
 
-export default CurrentTrain;
+export default CurrentTrain

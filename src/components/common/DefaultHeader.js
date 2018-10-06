@@ -1,5 +1,5 @@
-import React from 'react';
-import UserMenuContainer from "./UserMenuContainer";
+import React from 'react'
+import UserMenuContainer from "./UserMenuContainer"
 
 const DefaultHeader = (props) => {
     return (

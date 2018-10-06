@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import 'antd/lib/dropdown/style/css'
 import 'antd/lib/menu/style/css'
 
 class TrainerSets extends Component {
     render() {
-        const className = this.props.colorScheme + ' trainer-sets';
+        const className = this.props.colorScheme + ' trainer-sets'
         return (
             <div className={className}>
                 {this.props.sets.map(set => (
@@ -15,8 +15,8 @@ class TrainerSets extends Component {
                 }
                 <div className="clear"/>
             </div>
-        );
+        )
     }
 }
 
-export default TrainerSets;
+export default TrainerSets

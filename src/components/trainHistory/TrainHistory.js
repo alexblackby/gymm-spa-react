@@ -1,5 +1,5 @@
-import React from 'react';
-import TrainHistoryList from "./TrainHistoryList";
+import React from 'react'
+import TrainHistoryList from "./TrainHistoryList"
 
 const TrainHistory = (props) => {
     let message
@@ -14,14 +14,12 @@ const TrainHistory = (props) => {
     return (
         <div>
             <h1>История тренировок:</h1>
-            {showList &&
-            <TrainHistoryList items={props.trainHistory.items}/>
-            }
-            {!showList &&
-            <div className="light-text">{message}</div>
+            {showList
+                ? <TrainHistoryList items={props.trainHistory.items}/>
+                : <div className="light-text">{message}</div>
             }
         </div>
-    );
+    )
 }
 
-export default TrainHistory;
+export default TrainHistory

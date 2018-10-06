@@ -1,12 +1,12 @@
-import {connect} from 'react-redux';
-import CurrentTrain from "./CurrentTrain";
-import {startTrain} from "../../actions";
+import {connect} from 'react-redux'
+import CurrentTrain from "./CurrentTrain"
+import {startTrain} from "../../actions"
 
 const mapStateToProps = function (store) {
     return {
         currentTrain: store.currentTrain
-    };
-};
+    }
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CurrentTrain);
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentTrain)

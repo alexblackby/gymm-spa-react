@@ -2,7 +2,7 @@ import utils from './utils'
 
 
 const caseInsensitiveSort = function (a, b) {
-    return a.toLowerCase().localeCompare(b.toLowerCase());
+    return a.toLowerCase().localeCompare(b.toLowerCase())
 }
 
 const extractTrainerTitlesFromHistory = function (trainHistory) {
