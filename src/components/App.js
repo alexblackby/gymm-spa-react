@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
-import HomeScreen from "./components/HomeScreen";
-import PageNotFound from "./components/PageNotFound";
-import CurrentTrainContainer from "./components/currentTrain/CurrentTrainContainer";
-import * as service from './service'
-import './assets/App.css';
+import HomeScreen from "./homeScreen/HomeScreen";
+import PageNotFound from "./PageNotFound";
+import CurrentTrainContainer from "./currentTrain/CurrentTrainContainer";
+import initApp from '../service/initApp';
+import '../assets/App.css';
 
 class App extends Component {
   constructor(props) {
       super(props)
-      service.init()
+      initApp()
   }
 
   render() {

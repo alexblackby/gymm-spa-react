@@ -46,7 +46,7 @@ const trainHistory = (state = initState, action) => {
         case 'SET_TRAIN_HISTORY_LOADING':
             return {
                 ...state,
-                historyIsLoading: action.historyIsLoading
+                historyIsLoading: action.isLoading
             }
         case 'SET_TRAIN_HISTORY_LOADED_FULLY':
             return {

@@ -12,31 +12,32 @@ class TrainHistoryItem extends Component {
 
     toggleExpand() {
         this.setState(state => ({
+            ...state,
             expanded: !state.expanded
         }));
     }
 
     render() {
+        const item = this.props.item;
         return (
             <div className="form history-item" onClick={this.toggleExpand}>
                 <h2 className="form-header">
-                    {dateFormat(this.props.item.createTime, 'weekdayFullMonth')}
+                    {dateFormat(item.createTime, 'weekdayFullMonth')}
                 </h2>
-                {this.props.item.trainers.map(
+                {item.trainers.map(
                     trainer => (
                         <div key={trainer.createTime}>
                             <div>
                                 {trainer.title}
                             </div>
-                            { this.state.expanded &&
-                                <div className="history-item-sets">
-                                    <TrainerSets sets={trainer.sets} colorScheme="black-on-gray" />
-                                </div>
+                            {this.state.expanded &&
+                            <div className="history-item-sets">
+                                <TrainerSets sets={trainer.sets} colorScheme="black-on-gray"/>
+                            </div>
                             }
                         </div>
                     )
-                )
-                }
+                )}
             </div>
         );
     }
