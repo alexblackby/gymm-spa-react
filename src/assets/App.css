@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Asap|Open+Sans:400,700&amp;subset=cyrillic');
+
+body {
+  background: #b41448;
+  padding: 0;
+  margin: 0;
+}
+
+body, div, input, select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.white-text {
+  color: white;
+}
+
+.light-text {
+  color: #fdd;
+}
+
+h1, h2 {
+  color: white;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+#app {
+  max-width: 480px;
+  padding: 14px;
+  margin: 0 auto;
+}
+
+.form {
+  background: white;
+  padding: 14px;
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-bottom: 20px;
+  border: 1px solid #a70f41;
+  border-radius: 5px;
+}
+
+h1.form-header {
+  font-size: 18px;
+  padding: 0;
+  margin: 0 0 20px;
+  font-weight: normal;
+  color: black;
+}
+
+h2.form-header {
+  font-size: 17px;
+  padding: 0;
+  margin: 0 0 15px;
+  font-weight: normal;
+  color: #333;
+}
+
+
+/* animations */
+
+.burst-enter-active {
+  animation: burst-in .3s;
+}
+.burst-leave-active {
+  animation: burst-in .3s reverse;
+}
+
+@keyframes burst-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce-enter-active {
+  animation: bounce-in .4s;
+}
+.bounce-leave-active {
+  animation: bounce-in .4s reverse;
+}
+
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.app-header-logo {
+  float: left;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 24px;
+  line-height: 24px;
+  text-decoration: none;
+  font-family: 'Asap', sans-serif;
+  font-weight: 400;
+  margin: 0px 5px 12px;
+}
+
+.history-loading {
+  padding-bottom:20px;
+}
+
+
+
+
+
+.user-menu {
+  float: right;
+  width: 28px;
+  height: 44px;
+}
+.user-menu-button {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  margin-bottom: -4px;
+}
+.user-menu-image {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.user-menu,
+.user-menu-button
+{
+  border: none !important;
+  outline: none !important;
+}
+.user-menu-image {
+  background: url('./../assets/img/user.png') 100% 100% no-repeat;
+  background-size: cover;
+}
+
+
+
+
+.history-item {
+  background: #eee;
+  cursor: pointer;
+  color: black;
+}
+
+.history-item-sets {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.trainer-sets {
+  margin-bottom: 12px;
+}
+
+.trainer-sets-item {
+  float: left;
+  display: inline-block;
+  padding: 3px 5px;
+  margin: 0 9px 9px 0;
+  font-size: 12px;
+}
+
+.trainer-sets-delete {
+  float: right;
+  background: #f5f7fa;
+  border-left: 1px solid #dcdfe6;
+  color: #777;
+  font-size: 15px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  margin-left: 8px;
+  margin-right: -6px;
+  padding: 3px 9px 5px;
+}
+
+.black-on-gray .trainer-sets-item {
+  color: black;
+  background: #ccc;
+}
+
+.white-on-transparent .trainer-sets-item {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: white;
+  background: transparent;
+}
+
+.blue-and-green-on-white {
+  margin-bottom: 0;
+}
+
+.blue-and-green-on-white .trainer-sets-item {
+  border: 1px solid #dcdfe6;
+  background: white;
+  padding: 5px 6px;
+  margin: 0 9px 9px 0;
+  font-size: 13px;
+  color: #319d31;
+}
+
+.blue-and-green-on-white .trainer-sets-item strong {
+  color: #3787e2;
+}
+
+
+
+
+
+.current-train-header {
+  padding: 5px 0 15px;
+}
+
+.current-train-date {
+  font-size: 18px;
+  color: white;
+  float: left;
+}
+
+.current-train-stop {
+  font-size: 14px;
+  color: #fabdbd;
+  float: right;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.own-trainers {
+  margin-top: 10px;
+}
+
+.own-trainers-title {
+  padding: 10px 0 15px;
+}
+
+.own-trainers-item {
+  float: left;
+  border: 1px solid #82a9d6;
+  color: #1584c7;
+  padding: 5px 6px;
+  margin: 0 12px 12px 0;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.enter-title {
+  padding: 0 0 5px;
+}
+
+.trainer-form-autocompletes {
+  padding-top: 5px;
+}

@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom'
+import HomeScreen from "./components/HomeScreen";
+import PageNotFound from "./components/PageNotFound";
+import CurrentTrainContainer from "./components/currentTrain/CurrentTrainContainer";
+import * as service from './service'
+import './assets/App.css';
 
 class App extends Component {
+  constructor(props) {
+      super(props)
+      service.init()
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div id="app">
+            <Switch>
+                <Route exact path='/' component={HomeScreen}/>
+                <Route exact path='/current-train' component={CurrentTrainContainer}/>
+                <Route component={PageNotFound}/>
+            </Switch>
+        </div>
     );
   }
 }
