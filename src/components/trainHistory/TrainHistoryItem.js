@@ -12,7 +12,6 @@ class TrainHistoryItem extends Component {
 
     toggleExpand() {
         this.setState(state => ({
-            ...state,
             expanded: !state.expanded
         }))
     }
