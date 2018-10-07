@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import HomeScreen from "./homeScreen/HomeScreen"
-import PageNotFound from "./PageNotFound"
 import CurrentTrainContainer from "./currentTrain/CurrentTrainContainer"
 import initApp from '../service/initApp'
 import '../assets/App.css'
@@ -18,7 +17,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={HomeScreen}/>
                     <Route exact path='/current-train' component={CurrentTrainContainer}/>
-                    <Route component={PageNotFound}/>
+                    <Redirect to="/" />
                 </Switch>
             </div>
         )

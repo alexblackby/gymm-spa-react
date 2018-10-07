@@ -3,6 +3,7 @@ import rootReducer from '../reducers'
 
 const store = createStore(rootReducer)
 
+// todo: узнать где лучше разместить геттеры для state, ведь они нужны не только в компонентах но и в АПИ
 const getters = {
     getTrainHistoryLastCreateTime: () => {
         const len = store.getState().trainHistory.items.length

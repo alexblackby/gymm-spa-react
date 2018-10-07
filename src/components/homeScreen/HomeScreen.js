@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
+import {withRouter} from "react-router-dom"
 import DefaultHeader from "../common/DefaultHeader"
 import TrainHistoryContainer from "../trainHistory/TrainHistoryContainer"
 import StartTrainBlock from "./StartTrainBlock"
-import createHistory from "history/createHashHistory"
+
 
 class HomeScreen extends Component {
 
+    constructor(props) {
+        super(props)
+        this.clickStart = this.clickStart.bind(this)
+    }
+
     clickStart() {
-        const location = {
-            pathname: '/current-train'
-        }
-        const history = createHistory()
-        history.push(location)
+        this.props.history.push({pathname: '/current-train'})
     }
 
     render() {
@@ -25,4 +27,4 @@ class HomeScreen extends Component {
     }
 }
 
-export default HomeScreen
+export default withRouter(HomeScreen)

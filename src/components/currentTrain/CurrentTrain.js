@@ -1,32 +1,19 @@
-import React, {Component} from 'react'
-import dateFormat from "../../utils/dateFormats"
-import utils from "../../utils/utils"
-import uuid4 from 'uuid/v4'
-import SelectTrainer from "./SelectTrainer"
+import React from 'react'
+import SelectTrainerContainer from "./SelectTrainerContainer"
+import CurrentTrainerHeader from "./CurrentTrainHeader"
+import CurrentTrainer from "./CurrentTrainer"
 
-class CurrentTrain extends Component {
+const CurrentTrain = (props) => {
+    const hasCurrentTrain = !!props.currentTrain
 
-    componentDidMount() {
-        const id = uuid4()
-        const createTime = utils.timeInSeconds()
-        this.props.startTrain(id, createTime)
-    }
-
-    render() {
-        return (
-            <div>
-                <div className="current-train-header">
-                    <div className="current-train-date">
-                        {dateFormat(this.props.currentTrain.createTime, 'dayMonth')}
-                    </div>
-                    <div className="current-train-stop">
-                        Завершить тренировку
-                    </div>
-                </div>
-                <div className="clear"/>
-                <SelectTrainer/>
-            </div>
-        )
+    if(hasCurrentTrain) {
+        return <div>
+            <CurrentTrainerHeader createTime={props.currentTrain.createTime} onFinishTrain={props.finishTrain}/>
+            {props.hasCurrentTrainer
+                ? <CurrentTrainer currentTrainer={props.currentTrain.currentTrainer}/>
+                : <SelectTrainerContainer onStartTrainer={props.startTrainer}/>
+            }
+        </div>
     }
 }
 
